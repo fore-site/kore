@@ -1,0 +1,6 @@
+/target
+/pkg
+*.swp
+*.swo
+*~
+.DS_Store
