@@ -256,7 +256,7 @@ fn score_arrays(gt: &serde_json::Value, mr: &serde_json::Value) -> f64 {
     total_score / len as f64
 }
 
-// ─── Tests ────────────────────────────────────────────────────────────────
+// Tests
 
 #[cfg(test)]
 mod tests {
@@ -292,7 +292,7 @@ mod tests {
         }
     }
 
-    // ─── Existing tests (unchanged) ──────────────────────────────────
+    // Existing tests (unchanged)
 
     #[test]
     fn exact_string_match() {
@@ -368,7 +368,7 @@ mod tests {
         assert_eq!(score(&gt("0"), &mr("false")), 1.0);
     }
 
-    // ─── Gap 2: Case-insensitive + punctuation-stripped text ─────────
+    // Gap 2: Case-insensitive + punctuation-stripped text
 
     #[test]
     fn case_insensitive_match() {
@@ -416,7 +416,7 @@ mod tests {
         assert_eq!(s, 1.0);
     }
 
-    // ─── Gap 4: Type coercion ────────────────────────────────────────
+    // Gap 4: Type coercion
 
     #[test]
     fn string_number_coercion() {
@@ -471,7 +471,7 @@ mod tests {
         assert_eq!(score(&gt("0"), &mr("1")), 0.0);
     }
 
-    // ─── Gap 6: Fuzzy object scoring ─────────────────────────────────
+    // Gap 6: Fuzzy object scoring
 
     #[test]
     fn object_exact_match() {
@@ -519,7 +519,7 @@ mod tests {
         assert_eq!(score(&gt("[1, 2, 3]"), &mr("[1, 2, 3]")), 1.0);
     }
 
-    // ─── Subnet-specific integration tests ───────────────────────────
+    // Subnet-specific integration tests
 
     #[test]
     fn itsai_integer_classification() {
@@ -576,7 +576,7 @@ mod tests {
         assert!(s > 0.8, "expected > 0.8, got {s}");
     }
 
-    // ─── Edge cases ──────────────────────────────────────────────────
+    // Edge cases 
 
     #[test]
     fn both_empty_strings() {
